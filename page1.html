@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spesa</title>
+    <link rel="stylesheet" type="text/css" href="./styles.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+</head>
+
+<body>
+
+
+    <nav>
+        <ul class="clear">
+            <div>
+                <li><i class="fa fa-cloud"></i></li>
+                <li class="active" ><a href="page1.html">Lista Spesa</a></li>
+                <li><a href="page2.html">Competenze Utenti</a></li>
+                <li><a href="#correspondingId3">Roba3</a></li>
+                <li><a href="#correspondingId4">Roba4</a></li>
+                <li><a href="#correspondingId5">Roba5</a></li>
+            </div>
+        </ul>
+
+    </nav>
+
+    <h1 style="text-align: center;">Crea la tua lista della spesa (???? no idea di che fare)</h1>
+
+    <div style="text-align: center;" class="margintext" id="form">
+        <form action="">
+            <label for="titolo">Lista Spesa:</label>
+            <input type="text" name="titolo" id="titolo"> <br>
+            <input style="margin-top: 10px;" type="button" value="Aggiungi a Lista" onclick="insert()" />
+            <input style="margin-top: 10px;" type="button" value="Stampa Lista" onclick="show()" />
+            <input style="margin-top: 10px;" type="button" value="Elimina da Lista" onclick="eliminaElemento()" />
+        </form>
+
+
+    </div>
+    <div class="margintext" id="display"></div>
+
+
+
+
+    <label id="labelHidden" for="rimozione" hidden>Rimuovi Prodotto:</label>
+    <select class="margintext" id="selectRimozione" hidden></select>
+    <input id="buttonHidden" style="margin-top: 10px;" type="button" value="Conferma Eliminazione"
+        onclick="eliminazioneUfficiale()" hidden />
+
+    <script src="scriptsVari.js" type="text/javascript"></script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Competenze</title>
+    <link rel="stylesheet" type="text/css" href="./styles.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+
+<body>
+
+
+    <nav>
+        <ul class="clear">
+            <div>
+                <li><i class="fa fa-cloud"></i></li>
+                <li><a href="page1.html">Lista Spesa</a></li>
+                <li class="active"><a href="#correspondingId2">Competenze Utenti</a></li>
+                <li><a href="#correspondingId3">Roba3</a></li>
+                <li><a href="#correspondingId4">Roba4</a></li>
+                <li><a href="#correspondingId5">Roba5</a></li>
+            </div>
+        </ul>
+
+    </nav>
+
+    <div class="margintext">
+        <form name="utente" action="#">
+            <label for="titolo">Nome:</label>
+            <br>
+            <input type="text" name="nome" id="nome" required> <br><br>
+            <label for="Cognome">Cognome:</label><br>
+            <input type="text" name="cognome" id="cognome" required> <br><br>
+
+            <input class="buttonCute" style="margin-top: 10px;" id="bottoneAggiungi" type="button"
+                value="Aggiungi a Lista" onclick="addUser()" />
+            <input class="buttonCute" style="margin-top: 10px;" id="bottoneCerca" type="button"
+                value="Cerca Perito per Competenze:" onclick="searchUser()" />
+            <input class="buttonCute" style="margin-top: 10px;" id="bottoneModifica" type="button"
+                value="Modifica utente:" onclick="modifyUser()" />
+            <input class="buttonCute" style="margin-top: 10px;" id="bottoneCercaNome" type="button"
+                value="Cerca perito per Nome:" onclick="searchByName()" />
+
+
+        </form>
+        <div class="rcorners1">
+            <div class="margintext" id="saluti"></div>
+
+            <button class="buttonCute" id="bottoncino" type="button" onclick="selectComptence()"
+                hidden>Seleziona:</button>
+
+
+
+            <select class="margintext" name="competenze" id="competenze" hidden>
+
+
+                <option value="linux">Linux</option>
+                <option value="java">Java</option>
+                <option value="javaScript">JavaScript</option>
+                <option value="cPlusPlus">C++</option>
+                <option value="cSharp">C#</option>
+                <option value="ruby">Ruby</option>
+                <option value="php">PHP</option>
+                <option value="sql">SQL</option>
+                <option value="angular">Angular</option>
+                <option value="nodeJS">NodeJS</option>
+
+            </select>
+
+
+
+
+            <button class="buttonCute end" style="margin-left: 20px; margin-top: 40px;" id="conclusioneBottone"
+                type="button" onclick="endCreation()" hidden>Concludi
+                Creazione:</button>
+
+            <div class="margintext " id="salutiCompetenze"></div>
+            <input type="text" name="nomeInput" id="nomeInput" hidden >  <br><br> 
+            
+            
+
+
+
+
+            <select class="margintext" name="livelli" id="livelli" hidden>
+
+                <option value="4livello">4 Livello</option>
+                <option value="3livello">3 Livello</option>
+                <option value="2livello">2 Livello</option>
+                <option value="1livello">1 Livello</option>
+                <option value="0livello">Incompetente :(</option>
+
+            </select>
+
+            <br>
+            <br>
+            <button class="buttonCute" id="confermaRicercaNome" onclick="showUsersName()" hidden>Inizia Ricerca</button>
+            <button class="buttonCute" id="confermaRicerca" onclick="showUsers()" hidden>Inizia Ricerca</button>
+            <button class="buttonCute end" id="terminaRicerca" onclick="refresh()" hidden>Termina Ricerca</button>
+
+            <div class="margintext" id="printedUsers"></div>
+
+            <fieldset class="forLabel" style="width: 70%; margin-bottom: 10px;" id="radioField" hidden>
+                <label class="container" for="alto">4 - Esperienza molto elevata
+                    <input type="radio" id="alto" name="livello" value="4livello">
+                    <span class="checkmark"></span>
+                </label><br>
+
+                <label class="container" for="buono">3 - Esperienza buona
+                    <input type="radio" id="buono" name="livello" value="3livello">
+                    <span class="checkmark"></span>
+                </label><br>
+
+                <label class="container" for="medio">2 - Esperienza media
+                    <input type="radio" id="medio" name="livello" value="2livello">
+                    <span class="checkmark"></span>
+                </label><br>
+
+
+                <label class="container" for="basso">1 - Esperienza bassa
+                    <input type="radio" id="basso" name="livello" value="1livello">
+                    <span class="checkmark"></span>
+                </label><br>
+
+
+                <label class="container" for="zero">0 - Esperienza Assente
+                    <input type="radio" id="zero" name="livello" value="0livello">
+                    <span class="checkmark"></span>
+                </label><br><br>
+
+                <input class="buttonCute" type="submit" value="Salva Comptenza" onclick="selectComptence()">
+            </fieldset>
+
+
+            <button class="buttonCute " style="margin-left: 20px;" id="modifica" type="button" onclick="modify()"
+                hidden>Seleziona
+                competenza:</button>
+            <br> <br>
+
+            <select class="margintext" name="nomiUtenti" id="nomiUtenti" hidden>
+
+
+                <option value="Albertazzi">Albertazzi Marco</option>
+                <option value="Bianchi">Bianchi Paolo</option>
+                <option value="Verdi">Verdi Luca</option>
+            </select>
+
+
+
+
+
+
+            <button class="buttonCute end" id="terminaModifica" style="margin-top: 20px;" type="button"
+                onclick="refresh()" hidden>termina
+                Modifiche</button>
+        </div>
+
+
+
+        <script src="scritpCompetenze.js" type="text/javascript"></script>
+
+
+    </div>
+
+
+
+
+
+</body>
+
+</html>
